@@ -1,0 +1,15 @@
+server:  
+  port: ${PORT:9999}
+
+spring: 
+ application:
+    name: castle-config-service
+ cloud: 
+  config:
+   server:
+     native:
+       search-locations: file:/{directory_location_to_this_file}/castleconfigrepo/{application}/{profile}/{label}        
+     # git:
+        #uri:file://media/guls/Work/my-workspace/castleservices/castleconfigrepo
+ profiles:
+  active: ${CONFIG_SERVICE_PROFILE:native}       
